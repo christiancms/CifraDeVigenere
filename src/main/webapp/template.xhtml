@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+        <h:body>
+            <p:layout fullPage="true">
+                <p:layoutUnit position="north" size="50" resizable="false" closable="false" collapsible="false" style="text-align: center">
+                    <p:outputLabel value="Trabalho de Segurança - Cifra de Vigènere"/>
+                </p:layoutUnit>
+                <p:layoutUnit position="south" size="50" closable="false" collapsible="true" style="text-align: center">
+                    <p:outputLabel value="Fatec Pelotas" />
+                </p:layoutUnit>
+                <p:layoutUnit position="west" size="175" collapsible="false" style="overflow-x: hidden">
+                    <p:menu>
+                        <p:menuitem value="Principal" outcome="/index" />
+                        <p:menuitem value="Cifar" outcome="/cifrar" />
+                        <p:menuitem value="Decifar" outcome="/decifrar" />
+                    </p:menu>
+                </p:layoutUnit>
+                <p:layoutUnit position="center" id="centro">
+                    <ui:insert name="body"/>
+                </p:layoutUnit>
+            </p:layout>
+        </h:body>
+    </f:view>
+</html>
