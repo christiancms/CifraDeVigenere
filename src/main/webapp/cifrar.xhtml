@@ -11,13 +11,18 @@
         <ui:define name="body">
 
             <h:form id="form">
+                <p:messages autoUpdate="true"/>
                 <h:panelGrid columns="2" id="panel">
                     <h:outputLabel for="txtCifrar" value="Texto Legível"/>
-                    <p:inputTextarea id="txtCifrar" value="#{main.texto}" rows="6" cols="66" />
+                    <p:inputTextarea id="txtCifrar" value="#{main.texto}" required="true" rows="6" cols="66" >
+                        <f:validateLength minimum="3" />
+                    </p:inputTextarea>
                     <p:outputLabel for="chave" value="Chave"/>
                     <h:panelGrid columns="3">
-                        <p:inputText id="chave" value="#{main.chave}"/>  
-                        <p:commandButton id="btnEnviar" value="Enviar" action="#{main.criptografar}" />
+                        <p:inputText id="chave" required="true" value="#{main.chave}">
+                            <f:validateLength minimum="3" />
+                        </p:inputText>
+                        <p:commandButton id="btnEnviar" value="Enviar" action="#{main.criptografar}" update="panel" validateClient="true" />
                         <p:commandButton value="Limpar" update="panel" process="@this" actionListener="#{main.reset}" />
                     </h:panelGrid>
                 </h:panelGrid>

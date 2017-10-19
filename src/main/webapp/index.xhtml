@@ -6,11 +6,22 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="/template.xhtml">
-    <ui:define name="body">
-    <h1> História</h1>
-    <span> Cifrar de Decifrar </span>
-    
-    </ui:define>
-</ui:composition>
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
+            <h:panelGrid columns="1" id="panel" style="margin: 0 auto;">
+                <p:outputLabel value="História" style="font-size: 2em; display: block; font-weight: bold"/>
+                <p:graphicImage value="/resources/images/vigenere.jpg" style="width: 166px;height: 214px;" />
+                <p:outputLabel value="Blaise de Vigenère"/>
+                <p:outputPanel>
+                    A cifra Vigenère é um método de criptografia que usa uma série de diferentes "Cifras de César"
+                    com base nas letras de uma palavra-chave. Em uma cifra César, cada letra na passagem é 
+                    movida para um certo número de letras, para ser substituído pela letra correspondente.
+                    Por exemplo, isso significaria que em uma mudança de César de três: A se tornaria D; B 
+                    se tornaria E; C se tornaria F, etc. Uma cifra de Vigenère baseia-se neste método usando 
+                    múltiplas cifras de César em diferentes pontos da mensagem.
+                </p:outputPanel>
+            </h:panelGrid>
+
+        </ui:define>
+    </ui:composition>
 </html>

@@ -1,30 +1,28 @@
 package br.com.christiancms.model;
 
-/**
- *
- * @author christian
- */
 public class GerarMatriz {
 
     public char[][] gerarMatriz() {
-        int contador;
+        int count;
         GerarAlfabeto g = new GerarAlfabeto();
-        char abcTemp[] = g.gerarAlfabeto();
-        char abc[] = new char[abcTemp.length * 2];
+        char matrixTemp[] = g.gerarAlfabeto();
+        char abc[] = new char[matrixTemp.length * 2];
 
-        for (int c = 0; c < 96; c++) {
-            abc[c] = abcTemp[c];
-            abc[c + 96] = abcTemp[c];
+        for (int k = 0; k < 96; k++) {
+            abc[k] = matrixTemp[k];
+            abc[k + 96] = matrixTemp[k];
         }
 
+        //Matriz bidimensional, onde "i" é a linha e "j" é a coluna
         char[][] matriz = new char[96][96];
 
         for (int i = 0; i < 96; i++) {
-            contador = 0;
+            count = 0;
 
             for (int j = 0; j < 96; j++) {
-                matriz[i][j] = abc[contador + i];
-                contador++;
+                
+                matriz[i][j] = abc[count + i];
+                count++;
             }
         }
         return matriz;

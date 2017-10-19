@@ -1,9 +1,5 @@
 package br.com.christiancms.model;
 
-/**
- *
- * @author christian
- */
 public class GerarAlfabeto {
     //Cria um array de characteres com 96 posições
 
